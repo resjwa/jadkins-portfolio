@@ -1,15 +1,12 @@
 // Mixins -------------
 //=====================
-
 	//Font sizing
-
 		$ratio: .618;
 		@mixin font-size($multiplier) {
 			font-size: $multiplier * $ratio + em;
 		}
 
 	// Clearfix
-
 		@mixin clearfix() {
 		    &:before,
 		    &:after {
@@ -19,6 +16,22 @@
 		    &:after {
 		        clear: both;
 		    }
+		}
+
+	// Flexbox
+		@mixin flexbox() {
+			display: -webkit-box;
+			display: -moz-box;
+			display: -ms-flexbox;
+			display: -webkit-flex;
+			display: flex;
+		}
+		@mixin flex($values) {
+		  -webkit-box-flex: $values;
+		  -moz-box-flex:  $values;
+		  -webkit-flex:  $values;
+		  -ms-flex:  $values;
+		  flex:  $values;
 		}
 
 	// Borderbox 
@@ -35,7 +48,24 @@
 			box-shadow: -3px 3px 20px -6px rgba(0,0,0,0.7);
 		}
 
+	// Cover 
+		@mixin cover() {
+	        -webkit-background-size: cover;
+		    -moz-background-size: cover;
+			-o-background-size: cover;
+	      	background-size: cover;
+		}
 
+	// Radial Gradient
+		@mixin radial-gradient($from, $to) {
+			background-color: $from;
+			background: -moz-radial-gradient(center, circle cover, $from 0%, $to 100%);
+			background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, $from), color-stop(100%, $to));
+			background: -webkit-radial-gradient(center, circle cover, $from 0%, $to 100%);
+			background: -o-radial-gradient(center, circle cover, $from 0%, $to 100%);
+			background: -ms-radial-gradient(center, circle cover, $from 0%, $to 100%);
+			background: radial-gradient(center, circle cover, $from 0%, $to 100%);
+		}
 
 // Variables ----------
 //=====================
@@ -43,21 +73,82 @@
 	$lato: 'Lato', sans-serif;	
 
 	//Colors
-	$background:	#272822;
-	$border-color:	rgba(255, 255, 255, 0.07);
-	$trans-black:	rgba(0,0,0,0.2);
-	$text:			darken(white, 30%);
+		$background:	#883f3d;
+		$background2:	lighten($background, 30%);
+		$trans-black:	rgba(0,0,0,0.85);
+		$text:			darken(white, 10%);
+		$link-color:	#caffef;
+		$cell-color:	rgba(16, 51, 58, 0.89);
+		$link-underline: rgba(202, 255, 239, 0.35);
+		$border-color:	$link-underline;
+
 
 	//Breakpoints
+		$small: 640px;
+		$medium: 1024px;
+		$large: 1600px;
 
 	// Header padding for fixed topbar
-	$top-padding: 137px;
+		$top-padding: 132px;
+
+	// Borders
+		$borders: 1px solid $border-color;
+
 
 //Basic styles --------
 //=====================
-
+	#loader {
+		background: #302f30;
+		width: 100%;
+		height: 100%;
+		position: fixed;
+	    top: 0;
+    	left: 0;
+    	z-index: 10000;
+	}
+	#spinner {
+	  	animation: animate 1.5s linear infinite;
+	  	clip: rect(0, 80px, 80px, 40px); 
+	  	height: 80px;
+	  	width: 80px;
+  		position: absolute;
+  		left: calc(50% - 40px);
+  		top: calc(50% - 40px);
+  		&:after {
+			animation: animate2 1.5s ease-in-out infinite;
+			clip: rect(0, 80px, 80px, 40px);
+			content:'';
+			border-radius: 50%; 
+			height: 80px;
+			width: 80px;
+			position: absolute; 
+		} 
+	}
+	@keyframes animate {
+	  0% { 
+	    transform: rotate(0deg)
+	  }
+	  100% { 
+	    transform: rotate(220deg)
+	  }
+	}
+	@keyframes animate2 {
+		0% {
+			box-shadow: inset #fff 0 0 0 17px;
+			transform: rotate(-140deg);
+		}
+		50% {
+			box-shadow: inset #fff 0 0 0 2px;
+		}
+		100% {
+			box-shadow: inset #fff 0 0 0 17px;
+			transform: rotate(140deg);
+		}
+	}
+	html {
+		height: 100%;
+	}
 	body {
-		background: $background;
 		color: $text;
 		font-family: $open-sans;
 		padding: $top-padding 20px;
@@ -65,39 +156,88 @@
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         @include borderbox();
+        background: url('../images/mountains.jpg') no-repeat center center fixed;
+        @include cover();
+        @media all and (max-width: $medium) {
+        	padding: $top-padding 0px;
+        }
+        @media all and (max-width: $small) {
+			background: #5d322e;
+        }
 	}
+
 	main {
-		max-width: 1220px;
-		margin: 0 auto;
-	}
-	header {
-		h1, h2, .subtitle {
-			margin: 0;
+		@include flexbox();
+		justify-content: center;
+		flex-wrap: wrap;
+		@media all and (max-width: $large) {
+			display: block;
 		}
 	}
-	h1, h2, .subtitle {
-		font-family: $lato;
-		font-weight: 300;
-		text-transform: uppercase;
-	}
-	h1 {
-		@include font-size(4);
-	}
-	h2 {
-		@include font-size(3);
-	}
+
+	// Grid ---- 
+		.grid {
+			section {
+				@include flex(1 49%);
+				max-width: 49%;
+				margin: .5%;
+				margin-bottom: 20px;
+				background: $trans-black;
+				border: $borders;
+				position: relative;
+				@include borderbox();
+				@include shadow();
+				.project-title {
+					margin: 0;
+					padding: 10px;
+				}
+				@media all and (max-width: $large) {
+					max-width: 1200px;
+					width: 100%;
+					margin: 0 auto 20px;
+				}
+			}
+		}
+
 	p {
 		font-size: 1em;
 		margin:  20px auto;
 		max-width: 720px;
+		padding: 0 20px;
+		line-height: 1.618;
 	}
 	img {
 		max-width: 100%;
 	}
-	$borders: 1px solid $border-color;
+	a {
+		text-decoration: none;
+		border-bottom: 1px dashed $link-underline;
+		color: $link-color;
+		&:hover {
+			font-weight: bold;
+		}
+	}
 
-// Elements ------
-//======================
+	// Header elements
+		header {
+			h1, h2 {
+				margin: 0;
+			}
+		}
+		h1, h2, h3 {
+			font-family: $lato;
+			font-weight: 300;
+			text-transform: uppercase;
+		}
+		h1 {
+			@include font-size(4);
+		}
+		h2 {
+			@include font-size(2);
+		}
+		h3 {
+			@include font-size(3);
+		}
 
 	// BG overlay ---------
 		.background-pattern {
@@ -107,11 +247,9 @@
 			top: 0;
 			width: 100%;
 			height: 100%;
-			z-index: -1;
 		}
 
-	// Header -------------
-
+	// Chrome -------------
 		header {
 			position: fixed;
 			top: 0;
@@ -121,37 +259,49 @@
 			background: $trans-black;
 			border-bottom: $borders;
 			z-index: 1000;
+			@include flexbox();
+			@include borderbox();
+			justify-content: space-between;
 			@include shadow();
-			.subtitle {
-				@include font-size(2);
-			}
-			nav {
-				width: 40%;
-				text-align: right;
-				float: left;
-				padding-right: 20px;
+			.contact {
+				margin-right: 20px;
+				font-size: 50px;
+				color: white;
+				padding: 0 20px;
+				border-bottom: none;
 			}
 		}
-
-	// Article (Cards) ---- 
-
-		article {
-			max-width: 920px;
-			margin: 0 auto 20px;
-			background: $trans-black;
-			border: $borders;
-			position: relative;
+		#main-nav {
+			z-index: 10000;
+			display: none;
+			&.is-active {
+				display: inline;
+			}
 			@include borderbox();
-			@include shadow();
-			h2 {
-				margin: 0;
-				padding: 10px;
-				background: $trans-black;
+			position: fixed;
+			width: 100%;
+			height: 100%;
+			top: $top-padding - 20px;
+			left: 0;
+			background: $cell-color;
+			ul {
+				margin: 0 auto;
+				width: 200px;
+				list-style-type: none;
+				padding-left: 0;
+				li {
+					padding: 10px;
+					@include font-size(2);
+				}
 			}
 		}
 
 	// Image Holder
 		.image-holder {
+			img {
+				border-top: $borders;
+				border-bottom: $borders;
+			}
 			.photo-credit {
 				@include font-size(1);
 				text-transform: uppercase;
