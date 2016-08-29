@@ -143,21 +143,23 @@
 		}
 	}
 	body {
+		@include borderbox();
+		@include cover();
 		color: $text;
 		font-family: $open-sans;
 		padding: $top-padding 20px;
 		text-rendering: optimizeLegibility;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        @include borderbox();
-        background: url('../images/mountains.jpg') no-repeat center center fixed;
-        @include cover();
-        @media all and (max-width: $medium) {
-        	padding: $top-padding 0px;
-        }
-        @media all and (max-width: $small) {
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		background: url('../images/mountains.jpg') no-repeat center center fixed;
+
+		@media all and (max-width: $medium) {
+			padding: $top-padding 0px;
+		}
+
+		@media all and (max-width: $small) {
 			background: #5d322e;
-        }
+		}
 	}
 
 	main {
