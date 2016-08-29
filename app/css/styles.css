@@ -173,6 +173,10 @@ header {
     color: white;
     padding: 0 20px;
     border-bottom: none; }
+    @media all and (max-width: 640px) {
+      header .contact {
+        margin-right: 0;
+        padding-right: 0; } }
 
 #main-nav {
   z-index: 10000;
