@@ -56,29 +56,21 @@
 			background-size: cover;
 		}
 
-	// Radial Gradient
-		@mixin radial-gradient($from, $to) {
-			background-color: $from;
-			background: -moz-radial-gradient(center, circle cover, $from 0%, $to 100%);
-			background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, $from), color-stop(100%, $to));
-			background: -webkit-radial-gradient(center, circle cover, $from 0%, $to 100%);
-			background: -o-radial-gradient(center, circle cover, $from 0%, $to 100%);
-			background: -ms-radial-gradient(center, circle cover, $from 0%, $to 100%);
-			background: radial-gradient(center, circle cover, $from 0%, $to 100%);
-		}
 
 // Variables ----------
 //=====================
 	$open-sans:'Open Sans', sans-serif;
 	$lato: 'Lato', sans-serif;	
 	//Colors
-		$background-color: #302f30;
-		$background2:	lighten($background-color, 30%);
-		$trans-black:	rgba(0,0,0,0.8);
-		$text:			darken(white, 10%);
-		$link-color:	#caffef;
-		$cell-color:	rgba(16, 51, 58, 0.89);
-		$link-underline: rgba(202, 255, 239, 0.35);
+		$background-color: lighten(black, 20%);
+		$trans-black:	rgba(0,0,0,0.75);
+		$cell-color:	rgba(78, 71, 0, 0.9);
+		$section-bg: 	$trans-black;
+		$chrome-bg:		$trans-black;
+		$text:			rgb(207, 206, 201);
+		$chrome-text:	$text;
+		$link-color:	#f1e2ca;
+		$link-underline: rgba(255, 255, 255, 0.35);
 		$border-color:	rgba(255, 255, 255, 0.22);
 
 	//Breakpoints
@@ -142,23 +134,27 @@
 			position: absolute; 
 		} 
 	}
+
 	body {
-		@include borderbox();
+		background-color: #6c6200;
+	  	background: url('../images/bg.jpg') no-repeat center center fixed;
+	  	background-blend-mode: multiply;
 		@include cover();
+		@include borderbox();
 		color: $text;
 		font-family: $open-sans;
 		padding: $top-padding 20px;
 		text-rendering: optimizeLegibility;
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
-		background: $background-color;
 		@media all and (max-width: $medium) {
 			padding: $top-padding 0px;
 		}
 
 		@media all and (max-width: $small) {
-			padding-top: $top-padding - 15px;
-			margin: 3px;
+			padding-top: $top-padding - 20px;
+			margin: 3px 0;
+			background: #6c6200;
 		}
 	}
 
@@ -178,7 +174,7 @@
 				max-width: 49%;
 				margin: .5%;
 				margin-bottom: 20px;
-				background: $trans-black;
+				background: $section-bg;
 				border: $borders;
 				position: relative;
 				@include borderbox();
@@ -256,7 +252,7 @@
 
 	// BG overlay ---------
 		.background-pattern {
-			background-image: url(../images/overlay2.png);
+			background-color: rgba(115, 108, 38, 0.45);
 			position: fixed;
 			left: 0;
 			top: 0;
@@ -271,13 +267,14 @@
 			left: 0;
 			padding: 20px 10px;
 			width: 100%;
-			background: $trans-black;
+			background: $chrome-bg;
 			border-bottom: $borders;
 			z-index: 1000;
 			@include flexbox();
 			@include borderbox();
 			justify-content: space-between;
 			@include shadow();
+			color: $chrome-text;
 			.contact {
 				margin-right: 20px;
 				font-size: 50px;
@@ -301,7 +298,7 @@
 			position: fixed;
 			width: 100%;
 			height: 100%;
-			top: $top-padding - 30px;
+			top: $top-padding - 20px;
 			left: 0;
 			background: $cell-color;
 			ul {
@@ -314,23 +311,31 @@
 					@include font-size(2);
 				}
 			}
+			@media all and (max-width: $small) {
+				top: $top-padding - 29px;
+			}
 		}
 
-	// Image Holder
+	// Image + text holder
+		.text-holder {
+			margin: 10px;
+			background: rgba(255,255,255,0.1);
+			padding: 10px 0;
+		}
 		.image-holder {
 			img {
 				border-top: $borders;
 				border-bottom: $borders;
 			}
 			.photo-credit {
-				@include font-size(1);
+				@include font-size(1.1);
 				text-transform: uppercase;
 				text-align: right;
 				margin: -5px 0 0;
 				background: $trans-black;
 				padding: 5px;
 				font-weight: 400;
-				color: darken(white, 30%);
+				color: darken(white, 20%);
 				border-bottom: $borders;
 				max-width: 100%;
 			}
