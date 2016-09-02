@@ -56,7 +56,6 @@
 			background-size: cover;
 		}
 
-
 // Variables ----------
 //=====================
 	$open-sans:'Open Sans', sans-serif;
@@ -86,6 +85,7 @@
 
 //Basic styles --------
 //=====================
+
 	#loader {
 		background: $background-color;
 		width: 100%;
@@ -134,21 +134,31 @@
 			position: absolute; 
 		} 
 	}
+	.overlay {
+		background-color: rgba(108, 98, 0, 0.22);
+		position: fixed;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		@media all and (max-width: $small) {
+			display: none;
+		}
+	}
 
 	body {
 		background-color: #6c6200;
 	  	background: url('../images/bg.jpg') no-repeat center center fixed;
-	  	background-blend-mode: multiply;
 		@include cover();
 		@include borderbox();
 		color: $text;
 		font-family: $open-sans;
-		padding: $top-padding 20px;
+		padding: $top-padding 20px 0px;
 		text-rendering: optimizeLegibility;
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 		@media all and (max-width: $medium) {
-			padding: $top-padding 0px;
+			padding: $top-padding 0px 0px;
 		}
 
 		@media all and (max-width: $small) {
@@ -174,6 +184,7 @@
 				max-width: 49%;
 				margin: .5%;
 				margin-bottom: 20px;
+				background: #222;
 				background: $section-bg;
 				border: $borders;
 				position: relative;
@@ -191,6 +202,8 @@
 
 				@media all and (max-width: $small) {
 					margin-bottom: 10px;
+					border-left: none;
+					border-right: none;
 				}
 			}
 		}
@@ -203,21 +216,25 @@
 		line-height: 1.618;
 		@media all and (max-width: $small) {
 			padding: 0 10px;
+			line-height: 1.7;
 		}
-	}
-	img {
-		max-width: 100%;
 	}
 	a {
 		text-decoration: none;
+		border-bottom: 1px dashed white;
 		border-bottom: 1px dashed $link-underline;
+		color: black;
 		color: $link-color;
 		&:hover {
 			font-weight: bold;
 		}
 	}
 
-	// Header elements
+	img {
+		max-width: 100%;
+	}
+
+	// headers
 		header {
 			h1, h2 {
 				margin: 0;
@@ -250,32 +267,28 @@
 			}
 		}
 
-	// BG overlay ---------
-		.background-pattern {
-			background-color: rgba(115, 108, 38, 0.45);
-			position: fixed;
-			left: 0;
-			top: 0;
-			width: 100%;
-			height: 100%;
-		}
-
 	// Chrome -------------
-		header {
-			position: fixed;
-			top: 0;
+
+		.chrome {
 			left: 0;
 			padding: 20px 10px;
 			width: 100%;
 			background: $chrome-bg;
 			border-bottom: $borders;
-			z-index: 1000;
 			@include flexbox();
 			@include borderbox();
-			justify-content: space-between;
 			@include shadow();
 			color: $chrome-text;
-			.contact {
+		}
+
+		header {
+			@extend .chrome;
+			position: fixed;
+			top: 0;
+			z-index: 1000;
+			justify-content: space-between;
+			
+			.navigation {
 				margin-right: 20px;
 				font-size: 50px;
 				color: white;
@@ -288,6 +301,20 @@
 				}
 			}
 		}
+
+		footer {
+			@extend .chrome;
+			position: absolute;
+			left: 0;
+			display: block;
+			h3 {
+				margin: 0;
+			}
+			p {
+				margin: 20px 10px;
+			}
+		}
+
 		#main-nav {
 			z-index: 10000;
 			display: none;
@@ -300,6 +327,7 @@
 			height: 100%;
 			top: $top-padding - 20px;
 			left: 0;
+			background: #4e4700;
 			background: $cell-color;
 			ul {
 				margin: 0 auto;
@@ -316,12 +344,7 @@
 			}
 		}
 
-	// Image + text holder
-		.text-holder {
-			margin: 10px;
-			background: rgba(255,255,255,0.1);
-			padding: 10px 0;
-		}
+	// Image holder
 		.image-holder {
 			img {
 				border-top: $borders;

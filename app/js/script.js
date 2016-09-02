@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	$('html').removeClass('no-js');
-	$('.contact').click(function(e){
+	$('#nav-toggle').click(function(e){
 		e.preventDefault();
 		var $this = $(this);
 		var $state = $this.attr('aria-selected') === 'true' ? false : true;
