@@ -133,13 +133,8 @@ p {
       line-height: 1.7; } }
 
 a {
-  text-decoration: none;
-  border-bottom: 1px dashed white;
-  border-bottom: 1px dashed rgba(255, 255, 255, 0.35);
-  color: black;
-  color: #f1e2ca; }
-  a:hover {
-    font-weight: bold; }
+  color: inherit;
+  font-weight: bold; }
 
 img {
   max-width: 100%; }
@@ -198,7 +193,7 @@ header {
     font-size: 50px;
     color: white;
     padding: 0 20px;
-    border-bottom: none; }
+    text-decoration: none; }
     @media all and (max-width: 640px) {
       header .navigation {
         margin-right: 0;
