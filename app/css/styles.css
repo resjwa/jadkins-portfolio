@@ -92,6 +92,18 @@ body {
       padding-top: 112px;
       margin: 3px 0;
       background: #6c6200; } }
+  @media only screen and (min-device-width: 320px) and (max-device-width: 736px) and (orientation: landscape) {
+    body {
+      padding-top: 62px; }
+      body header {
+        padding: 5px; }
+        body header h1 {
+          font-size: 2em; }
+      body #main-nav {
+        top: 69px; }
+        body #main-nav .contact {
+          padding: 10px;
+          margin: 5px auto; } }
 
 main {
   display: -webkit-box;
@@ -263,7 +275,7 @@ footer {
   position: fixed;
   width: 100%;
   height: 100%;
-  top: 113px;
+  top: 112px;
   left: 0;
   background: #4e4700;
   background: rgba(78, 71, 0, 0.9); }

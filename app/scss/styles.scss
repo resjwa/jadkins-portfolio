@@ -24,6 +24,27 @@
 			margin: 3px 0;
 			background: $background-color;
 		}
+		// Landscape device styles
+		@media only screen 
+		and (min-device-width: 320px) 
+		and (max-device-width: 736px) 
+		and (orientation: landscape) { 
+			padding-top: $top-padding - 70px;
+			header {
+				padding: 5px;
+				h1 {
+					font-size: 2em;
+				}
+			}
+			#main-nav {
+				top: 69px;
+				.contact {
+					padding: 10px;
+					margin: 5px auto;
+				}
+			}
+
+		}
 
 	}
 
@@ -207,7 +228,7 @@
 		position: fixed;
 		width: 100%;
 		height: 100%;
-		top: $top-padding - 19px;
+		top: $top-padding - 20px;
 		left: 0;
 		background: #4e4700;
 		background: $cell-color;
