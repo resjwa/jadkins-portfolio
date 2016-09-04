@@ -1,163 +1,20 @@
-// Mixins -------------
+@import "mixins";
+@import "variables";
+@import "icon-font";
+@import "loaders";
+
+//Body and Layout -----
 //=====================
-	//Font sizing
-		$ratio: .618;
-		@mixin font-size($multiplier) {
-			font-size: $multiplier * $ratio + em;
-		}
-
-	// Clearfix
-		@mixin clearfix() {
-		    &:before,
-		    &:after {
-		        content: "";
-		        display: table;
-		    }
-		    &:after {
-		        clear: both;
-		    }
-		}
-
-	// Flexbox
-		@mixin flexbox() {
-			display: -webkit-box;
-			display: -moz-box;
-			display: -ms-flexbox;
-			display: -webkit-flex;
-			display: flex;
-		}
-		@mixin flex($values) {
-			-webkit-box-flex: $values;
-			-moz-box-flex:  $values;
-			-webkit-flex:  $values;
-			-ms-flex:  $values;
-			flex:  $values;
-		}
-
-	// Borderbox 
-		@mixin borderbox() {
-			-webkit-box-sizing: border-box;
-			-moz-box-sizing: border-box;
-			box-sizing: border-box;
-		}
-
-	//boxshadow
-		@mixin shadow() {
-			-webkit-box-shadow: -3px 3px 20px -6px rgba(0,0,0,0.7);
-			-moz-box-shadow: -3px 3px 20px -6px rgba(0,0,0,0.7);
-			box-shadow: -3px 3px 20px -6px rgba(0,0,0,0.7);
-		}
-
-	// Cover 
-		@mixin cover() {
-			-webkit-background-size: cover;
-			-moz-background-size: cover;
-			-o-background-size: cover;
-			background-size: cover;
-		}
-
-// Variables ----------
-//=====================
-	$open-sans:'Open Sans', sans-serif;
-	$lato: 'Lato', sans-serif;	
-
-	//Colors
-		$background-color: lighten(black, 20%);
-		$trans-black:	rgba(0,0,0,0.75);
-		$cell-color:	rgba(78, 71, 0, 0.9);
-		$section-bg: 	$trans-black;
-		$chrome-bg:		$trans-black;
-		$text:			rgb(207, 206, 201);
-		$chrome-text:	$text;
-		$link-color:	#f1e2ca;
-		$link-underline: rgba(255, 255, 255, 0.35);
-		$border-color:	rgba(255, 255, 255, 0.22);
-
-	//Breakpoints
-		$small: 640px;
-		$medium: 1024px;
-		$large: 1600px;
-
-	// Header padding for fixed topbar
-		$top-padding: 132px;
-
-	// Borders
-		$borders: 1px solid $border-color;
-
-//Basic styles --------
-//=====================
-
-	#loader {
-		background: $background-color;
-		width: 100%;
-		height: 100%;
-		position: fixed;
-		top: 0;
-		left: 0;
-		z-index: 10000;
-	}
-		@keyframes animate {
-			0% { 
-				transform: rotate(0deg)
-			}
-			100% { 
-				transform: rotate(220deg)
-			}
-		}
-		@keyframes animate2 {
-			0% {
-				box-shadow: inset #fff 0 0 0 17px;
-				transform: rotate(-140deg);
-			}
-			50% {
-				box-shadow: inset #fff 0 0 0 2px;
-			}
-			100% {
-				box-shadow: inset #fff 0 0 0 17px;
-				transform: rotate(140deg);
-			}
-		}
-	#spinner {
-	  	animation: animate 1.5s linear infinite;
-	  	clip: rect(0, 80px, 80px, 40px); 
-	  	height: 80px;
-	  	width: 80px;
-  		position: absolute;
-  		left: calc(50% - 40px);
-  		top: calc(50% - 40px);
-  		&:after {
-			animation: animate2 1.5s ease-in-out infinite;
-			clip: rect(0, 80px, 80px, 40px);
-			content:'';
-			border-radius: 50%; 
-			height: 80px;
-			width: 80px;
-			position: absolute; 
-		} 
-	}
-	.overlay {
-		background-color: rgba(108, 98, 0, 0.22);
-		position: fixed;
-		left: 0;
-		top: 0;
-		width: 100%;
-		height: 100%;
-		@media all and (max-width: $small) {
-			display: none;
-		}
-	}
-
 	body {
 		background-color: #6c6200;
-	  	background: url('../images/bg.jpg') no-repeat center center fixed;
+	  	background: url('../images/bg.jpg') no-repeat center fixed;
 		@include cover();
 		@include borderbox();
+		@include legible();
 		color: $text;
 		font-family: $open-sans;
 		padding: $top-padding 20px 0px;
-		text-rendering: optimizeLegibility;
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
+
 		@media all and (max-width: $medium) {
 			padding: $top-padding 0px 0px;
 		}
@@ -165,56 +22,68 @@
 		@media all and (max-width: $small) {
 			padding-top: $top-padding - 20px;
 			margin: 3px 0;
-			background: #6c6200;
+			background: $background-color;
 		}
+
 	}
 
 	main {
-		@include flexbox();
-		justify-content: center;
-		flex-wrap: wrap;
-		@media all and (max-width: $large) {
-			display: block;
-		}
+			@include flexbox();
+			justify-content: center;
+			flex-wrap: wrap;
+			@media all and (max-width: $large) {
+				display: block;
+			}
+		
 	}
 
-	// Two items per row for large screens ---- 
-		.grid {
-			section {
-				@include flex(1 49%);
-				max-width: 49%;
-				margin: .5%;
-				margin-bottom: 20px;
-				background: #222;
-				background: $section-bg;
-				border: $borders;
-				position: relative;
-				@include borderbox();
-				@include shadow();
-				.project-title {
-					margin: 0;
-					padding: 10px;
-				}
-				@media all and (max-width: $large) {
-					max-width: 1200px;
-					width: 100%;
-					margin: 0 auto 20px;
-				}
+	// Sections: 2 items per row for large screens ---- 
+		section {
+			@include flex(1 49%);
+			max-width: 49%;
+			margin: .5%;
+			margin-bottom: 20px;
+			background: #222;
+			background: $section-bg;
+			border: $borders;
+			position: relative;
+			@include borderbox();
+			@include shadow();
+			.project-title {
+				margin: 0;
+				padding: 10px;
+			}
+			@media all and (max-width: $large) {
+				max-width: 1200px;
+				width: 100%;
+				margin: 0 auto 20px;
+			}
 
-				@media all and (max-width: $small) {
-					margin-bottom: 10px;
-					border-left: none;
-					border-right: none;
-				}
+			@media all and (max-width: $small) {
+				margin-bottom: 10px;
+				border-left: none;
+				border-right: none;
 			}
 		}
 
+// Basic markup styles -------
+//----------------------------
+	.screenreader-text {
+		position: absolute;
+		text-indent: -9999px;
+	}
+	button {
+		background: none;
+		border: none;
+	}
 	p {
+		color: inherit;
 		font-size: 1em;
 		margin:  20px auto;
 		max-width: 720px;
 		padding: 0 20px;
 		line-height: 1.618;
+		clear: both;
 		@media all and (max-width: $small) {
 			padding: 0 10px;
 			line-height: 1.7;
@@ -229,7 +98,7 @@
 		max-width: 100%;
 	}
 
-	// headers
+	// Headers
 		header {
 			h1, h2 {
 				margin: 0;
@@ -262,101 +131,131 @@
 			}
 		}
 
-	// Chrome -------------
-
-		.chrome {
-			left: 0;
-			padding: 20px 10px;
-			width: 100%;
-			background: $chrome-bg;
-			border-bottom: $borders;
-			@include flexbox();
-			@include borderbox();
-			@include shadow();
-			color: $chrome-text;
-		}
-
-		header {
-			@extend .chrome;
-			position: fixed;
-			top: 0;
-			z-index: 1000;
-			justify-content: space-between;
-			
-			.navigation {
-				margin-right: 20px;
-				font-size: 50px;
-				color: white;
-				padding: 0 20px;
+	.media-icons {
+		max-width: 720px;
+		margin: 20px auto;
+		display: block;
+		border-top: $borders;
+		border-bottom: $borders;
+		list-style-type: none;
+		padding: 5px 10px;
+		@include clearfix();
+		li {
+			float: left;
+			margin-right: 25px;
+			a {
 				text-decoration: none;
-				@media all and (max-width: $small) {
-					margin-right: 0;
-					padding-right: 0;
-					font-size: 35px;
-				}
+				font-size: 30px;
 			}
 		}
+	}
 
-		footer {
-			@extend .chrome;
-			position: absolute;
-			left: 0;
-			display: block;
-			h3 {
-				margin: 0;
-			}
-			p {
-				margin: 20px 10px;
-			}
-		}
+// Chrome -------------
+//---------------------
+	.chrome {
+		left: 0;
+		padding: 20px 10px;
+		width: 100%;
+		background: $chrome-bg;
+		border-bottom: $borders;
+		@include flexbox();
+		@include borderbox();
+		@include shadow();
+		color: $chrome-text;
+	}
 
-		#main-nav {
-			z-index: 10000;
-			display: none;
-			&.is-active {
-				display: inline;
-			}
-			@include borderbox();
-			position: fixed;
-			width: 100%;
-			height: 100%;
-			top: $top-padding - 20px;
-			left: 0;
-			background: #4e4700;
-			background: $cell-color;
-			ul {
-				margin: 0 auto;
-				width: 200px;
-				list-style-type: none;
-				padding-left: 0;
-				li {
-					padding: 10px;
-					@include font-size(2);
-				}
-			}
+	header {
+		@extend .chrome;
+		position: fixed;
+		top: 0;
+		z-index: 1000;
+		justify-content: space-between;
+		
+		.navigation {
+			cursor: pointer;
+			font-size: 50px;
+			color: white;
 			@media all and (max-width: $small) {
-				top: $top-padding - 29px;
+				font-size: 35px;
+			}
+			a {
+				text-decoration: none;
 			}
 		}
+	}
 
-	// Image holder
-		.image-holder {
-			img {
-				border-top: $borders;
-				border-bottom: $borders;
+	footer {
+		@extend .chrome;
+		position: absolute;
+		left: 0;
+		display: block;
+		h3 {
+			margin: 0;
+		}
+		p {
+			margin: 20px 10px;
+		}
+	}
+
+	#main-nav {
+		z-index: 10000;
+		display: none;
+		&.is-active {
+			display: inline;
+		}
+		@include borderbox();
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		top: $top-padding - 19px;
+		left: 0;
+		background: #4e4700;
+		background: $cell-color;
+		.contact {
+			background: rgba(0,0,0,0.25);
+			text-align: center;
+			@include borderbox();
+			@include clearfix();
+			margin: 50px auto;
+			max-width: 250px;
+			width: 100%;
+			border: $borders;
+			list-style-type: none;
+			padding: 20px;
+			li {
+				@include font-size(2);
+				padding: 10px 0;
 			}
-			.photo-credit {
-				@include font-size(1.1);
-				text-transform: uppercase;
-				text-align: right;
-				margin: -5px 0 0;
-				background: $trans-black;
-				padding: 5px;
-				font-weight: 400;
-				color: darken(white, 20%);
-				border-bottom: $borders;
-				max-width: 100%;
+			.media-icons {
+				@include flexbox();
+				li {
+					@include flex(1 25%)
+				}
 			}
 		}
+		@media all and (max-width: $small) {
+			top: $top-padding - 29px;
+		}
+	}
+
+// Image holder
+	.image-holder {
+		img {
+			border-top: $borders;
+			border-bottom: $borders;
+		}
+		.photo-credit {
+			@include font-size(1.1);
+			text-transform: uppercase;
+			text-align: right;
+			margin: -5px 0 0;
+			background: $trans-black;
+			padding: 5px;
+			font-weight: 400;
+			color: darken(white, 20%);
+			border-bottom: $borders;
+			max-width: 100%;
+		}
+	}
 
 

@@ -5,6 +5,7 @@ var useref = require('gulp-useref');
 var cssnano = require('gulp-cssnano');
 var uglify = require('gulp-uglify');
 var gulpIf = require('gulp-if');
+var imageResize = require('gulp-image-resize');
 var imagemin = require('gulp-imagemin');
 var cache = require('gulp-cache');
 
@@ -36,12 +37,22 @@ var cache = require('gulp-cache');
 	    .pipe(gulp.dest('dist'))
 	});
 
+//Resize images
+	gulp.task('resize', function () {
+		gulp.src(['app/images/*.+(png|jpg|gif|svg|JPG)', '!app/images/sm/**', '!app/images/favicons/**'])
+			.pipe(imageResize({
+			width : 640,
+			height : 360,
+			crop : true,
+			upscale : false
+		}))
+		.pipe(gulp.dest('app/images/sm/'));
+	});
+
 //Optimize images
 	gulp.task('images', function(){
 	    return gulp.src('app/images/**/*.+(png|jpg|gif|svg|JPG)')
-	    .pipe(cache(imagemin({
-	        interlaced: true
-	    })))
+	    .pipe(cache(imagemin()))
 	    .pipe(gulp.dest('dist/images'))
 	});
 

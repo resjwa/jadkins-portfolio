@@ -33,31 +33,32 @@
 		<!-- endbuild -->
 	</head>
 	<body>
-		<div class="overlay"></div>
-		<div id="loader">
-			<div id="spinner"></div>
+		<div id="loader" aria-hidden="true">
+			<div id="spinner" class="icon-spinner"></div>
 		</div>
 		<header>
-			<section>
+			<div>
 				<h1 class="title">Joe Adkins</h1>
 				<h2>Work Portfolio</h2>
-			</section>
-			<a id="nav-toggle" class="navigation" href="#" aria-selected="false">☰</a>
+			</div>
+			<button id="nav-toggle" class="navigation icon-menu" aria-label="Navigation Button" aria-selected="false">
+				<span class="screenreader-text">Navigation</span><a href="/contact"></a>
+			</button>
 		</header>
 		<nav id="main-nav" aria-labeledby="nav-toggle" aria-hidden="true">
-			<ul>
-				<li>jwa@jwastudio.com</li>
-				<li>resjwastudio@gmail.com</li>
-				<li>Text: 304.542.6362</li>
-				<li><a href="https://www.facebook.com/jwilliam.adkins" target="_blank">Faceboot</a></li>
-				<li><a href="https://soundcloud.com/jwa-3" target="_blank">SoundCloud</a></li>
-				<li><a href="https://www.linkedin.com/in/j-w-adkins-437aa360" target="_blank">LinkedIn</a></li>
-				<li><a href="https://github.com/resjwa/jadkins-portfolio" target="_blank">GitHub</a></li>
-				<li><a href="http://miserybrothers.com" target="_blank">Misery Brothers</a></li>
+			<ul class="contact">
+				<li class="contact-mail">jwa@jwastudio.com</li>
+				<li class="contact-text">304.542.6362</li>
+				<ul class="media-icons">
+					<li><a class="icon-soundcloud2" href="https://soundcloud.com/jwa-3" target="_blank"><span class="screenreader-text">SoundCloud</span></a></li>
+					<li><a class="icon-linkedin" href="https://www.linkedin.com/in/j-w-adkins-437aa360" target="_blank"><span class="screenreader-text">LinkedIn</span></a></li>
+					<li><a class="icon-github" href="https://github.com/resjwa/jadkins-portfolio" target="_blank"><span class="screenreader-text">GitHub<</span></a></li>
+					<li><a class="icon-facebook2" href="https://www.facebook.com/jwilliam.adkins" target="_blank"><span class="screenreader-text">Faceboot</span></a></li>
+				</ul>
 			</ul>
 		</nav>
 
-		<main class="grid">
+		<main id="main" class="grid">
 			<!-- ABOUT -->
 				<section>
 					<h3 class="project-title">About</h3>
@@ -73,6 +74,12 @@
 						</picture>
 						<p class="photo-credit">Pictured: Adam Carter, J. Adkins, Jessica Carey (photo), Butch Taylor.</p>
 					</div>
+					<ul class="media-icons">
+						<li><a class="icon-facebook2" href="https://www.facebook.com/jwilliam.adkins" target="_blank"><span class="screenreader-text">Faceboot</span></a></li>
+						<li><a class="icon-soundcloud2" href="https://soundcloud.com/jwa-3" target="_blank"><span class="screenreader-text">SoundCloud</span></a></li>
+						<li><a class="icon-linkedin" href="https://www.linkedin.com/in/j-w-adkins-437aa360" target="_blank"><span class="screenreader-text">LinkedIn</span></a></li>
+						<li><a class="icon-github" href="https://github.com/resjwa/jadkins-portfolio" target="_blank"><span class="screenreader-text">GitHub<</span></a></li>
+					</ul>
 					<p>My work involves the often-overlapping domains of technology and the arts. I create music for film/multi-media and for traditional and new venues. As a founding member of the creative production group The Misery Brothers, I help write and produce original content for a variety of purposes. I recently collaborated with film director and Misery Sister <a href="http://keystoneartspace.com/melanie-mandl/" target="_blank">Melanie Mandl</a> on a film project for <a href="https://theautry.org/" target="_blank">The Autry Museum of the American West</a> (Los Angeles) that premieres October, 2016.</p>
 					<p>My work in web and software development began in Y2K when I helped create an award-winning official website for the Los Angeles Dodgers. Since then, I have developed projects for organizations including Oxford University Press, The American Medical Association, American Association of Pediatrics, Actress Halle Berry, The STAPLES Center, and the US Government.</p>
 					<p>- J. Adkins, Ph.D.</p>
@@ -91,10 +98,10 @@
 							srcset="images/sm/TF-still.jpg">
 							<img src="images/TF-still.jpg" alt="Still from Tomatoface Commercial">
 						</picture>
-						<p class="photo-credit">Photo: Exceprt from <i>Tomatoface!</i>, produced by The Misery Brothers</p>
+						<p class="photo-credit">Photo: Exceprt from <em>Tomatoface!</em>, produced by The Misery Brothers</p>
 					</div>
 					<p><a href="http://miserybrothers.com" target="_blank">The Misery Brothers’</a> commercial <a href="https://www.youtube.com/watch?v=JniR6oK7kcQ" target="_blank"><em>Tomatoface!</em></a>, made for <a href="http://www.texasbeachbloodymary.com/" target="_blank">Texas Beach Bloody Mary Mix</a>, won a bronze “Cannonball” award in the area’s most prestigious advertising award show. The commercial was recognized alongside that of the Martin Agency, among others, for work that included nationally aired ads for <a href="https://www.youtube.com/watch?v=d5Md7FMNbUY" target="_blank">Geico Insurance</a> and Tic Tac mints.</p>
-					<p>The spot was co-produced with <a href="http://thebranching.com/" target="_blank">Lucas Krost, of The Branching</a>, written by The Misery Brothers (with Rob Wooten, of Texas Beach), directed by <a href="http://keystoneartspace.com/melanie-mandl/" target="_blank">Melanie Mandl</a>, filmed on location at <a href="https://www.facebook.com/GWARbar" target="_blank">GWARbar</a>, with the beautiful cinemetography work of Mark Mervis. The props were made by <a href="https://www.facebook.com/corottedartistry1" target="_blank">Corotted Artistry</a>, with music by GWAR and J. Adkins. Starring: Abbey Reddington, Michael Bishop, Shannon Roulet, and Jessica Carey.</p>
+					<p>The spot was written by The Misery Brothers (with Rob Wooten, of Texas Beach), co-produced with <a href="http://thebranching.com/" target="_blank">Lucas Krost, of The Branching</a>, , directed by <a href="http://keystoneartspace.com/melanie-mandl/" target="_blank">Melanie Mandl</a>, filmed on location at <a href="https://www.facebook.com/GWARbar" target="_blank">GWARbar</a>, with cinemetography by Mark Mervis. The props were made by <a href="https://www.facebook.com/corottedartistry1" target="_blank">Corotted Artistry</a>, with music by GWAR and J. Adkins. Starring: Abbey Reddington, Michael Bishop, Shannon Roulet, and Jessica Carey.</p>
 				</section>
 
 			<!-- Autry Museum -->
@@ -126,7 +133,7 @@
 							<source 
 							media="(max-width: 640px)"
 							srcset="images/sm/VFF.jpg">
-							<img src="images/VFF.jpg" alt="Virginia Film Fest posters" />
+							<img src="images/VFF.jpg" alt="Virginia Film Festival posters" />
 						</picture>
 						<p class="photo-credit">Trailers: Jonah Tobias Design: Watermark Design</p>
 					</div>
@@ -159,13 +166,13 @@
 						<picture>
 							<source 
 							media="(min-width: 641px)"
-							srcset="images/pammanottus.jpg">
+							srcset="images/pond.jpg">
 							<source 
 							media="(max-width: 640px)"
-							srcset="images/sm/pammanottus.jpg">
-							<img src="images/pammanottus.jpg" alt="Pammanottus Title Card" />
+							srcset="images/sm/pond.jpg">
+							<img src="images/pammanottus.jpg" alt="Scene painting from Pammanottus" />
 						</picture>
-						<p class="photo-credit">Imgage: <em>Pammanottus</em> title card</p>
+						<p class="photo-credit">Painting by J. Adkins</p>
 					</div>
 					<p><em>Strange Tales from Appalachia</em>, a series of re-imagined Appalachian Folktales, is a contemporary 'musical drama', whose predecessors include Prokofiev’s <a href="http://en.wikipedia.org/wiki/Peter_and_the_Wolf" target="_blank"><em>Peter and the Wolf</em></a> and Stravinsky’s <a href="http://en.wikipedia.org/wiki/Histoire_du_soldat" target="_blank"><em>L'histoire du soldat</em></a>. The compositional style employed in <em>Pammanottus</em> was inspired by the traditional Appalachian music I grew up with, as well as music by <a href="http://en.wikipedia.org/wiki/Toru_Takemitsu" target="_blank">Toru Takemitsu</a>, <a href="http://en.wikipedia.org/wiki/Charles_ives" target="_blank">Charles Ives</a>, and <a href="http://en.wikipedia.org/wiki/B%C3%A9la_Bart%C3%B3k" target="_blank">Béla Bartók</a>. From a storytelling perspective, my work was inspired (and borrows its name from) <a href="https://en.wikipedia.org/wiki/Pu_Songling" target="_blank">17<sup>th</sup> C. Chinese writer Pu Songling's</a> <em>Strange Tales from a Chinese Studio</em>, and 20<sup>th</sup> C. Japanese writer <a href="https://en.wikipedia.org/wiki/Kenji_Miyazawa" target="_blank">Kenji Miyazawa</a>.</p>
 					<p>This work is currently being produced as a stop-motion animated film by The Misery Brothers.</p>

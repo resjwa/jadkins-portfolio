@@ -1,0 +1,29 @@
+// Loaders -------------
+//----------------------
+
+//Main loader	
+	#loader {
+		background: $background-color;
+		width: 100%;
+		height: 100%;
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 10000;
+	}
+
+	@keyframes spin {
+	  	from {
+			transform: rotate(0deg);
+		}
+		to {
+			transform: rotate(360deg);
+		}
+	}
+	#spinner {
+	  	animation: spin 1.5s linear infinite;
+	    font-size: 60px;
+	    position: absolute;
+	    left: calc(50% - 30px);
+	    top: calc(50% - 30px);
+	}

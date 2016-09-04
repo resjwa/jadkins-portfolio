@@ -1,0 +1,27 @@
+// Variables ----------
+//=====================
+	$open-sans:'Open Sans', sans-serif;
+	$lato: 'Lato', sans-serif;	
+
+	//Colors
+		$background-color: #6c6200;
+		$trans-black:	rgba(0,0,0,0.75);
+		$cell-color:	rgba(78, 71, 0, 0.9);
+		$section-bg: 	$trans-black;
+		$chrome-bg:		$trans-black;
+		$text:			rgb(207, 206, 201);
+		$chrome-text:	$text;
+		$link-color:	#f1e2ca;
+		$link-underline: rgba(255, 255, 255, 0.35);
+		$border-color:	rgba(255, 255, 255, 0.22);
+
+	//Breakpoints
+		$small: 640px;
+		$medium: 1024px;
+		$large: 1824px;
+
+	// Header padding for fixed topbar
+		$top-padding: 132px;
+
+	// Borders
+		$borders: 1px solid $border-color;

@@ -1,0 +1,62 @@
+// Mixins -------------
+//=====================
+	//Font sizing
+		$ratio: .618;
+		@mixin font-size($multiplier) {
+			font-size: $multiplier * $ratio + em;
+		}
+
+	// Clearfix
+		@mixin clearfix() {
+		    &:before,
+		    &:after {
+		        content: "";
+		        display: table;
+		    }
+		    &:after {
+		        clear: both;
+		    }
+		}
+
+	// Flexbox
+		@mixin flexbox() {
+			display: -webkit-box;
+			display: -moz-box;
+			display: -ms-flexbox;
+			display: -webkit-flex;
+			display: flex;
+		}
+		@mixin flex($values) {
+			-webkit-box-flex: $values;
+			-moz-box-flex:  $values;
+			-webkit-flex:  $values;
+			-ms-flex:  $values;
+			flex:  $values;
+		}
+	// Legibility 
+		@mixin legible() {
+			text-rendering: optimizeLegibility;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+		}
+	// Borderbox 
+		@mixin borderbox() {
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+		}
+
+	//boxshadow
+		@mixin shadow() {
+			-webkit-box-shadow: -3px 3px 20px -6px rgba(0,0,0,0.7);
+			-moz-box-shadow: -3px 3px 20px -6px rgba(0,0,0,0.7);
+			box-shadow: -3px 3px 20px -6px rgba(0,0,0,0.7);
+		}
+
+	// Cover 
+		@mixin cover() {
+			-webkit-background-size: cover;
+			-moz-background-size: cover;
+			-o-background-size: cover;
+			background-size: cover;
+		}

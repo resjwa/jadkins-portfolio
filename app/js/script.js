@@ -14,7 +14,7 @@ $(window).load(function(){
 			var $target = $(target);
 
 			$trigger.click(function(e){
-				//e.preventDefault();
+				e.preventDefault();
 				var $this = $(this);
 				var $state = $this.attr('aria-selected') === 'true' ? false : true;
 				$target.toggleClass('is-active');
