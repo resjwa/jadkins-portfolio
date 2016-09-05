@@ -8,6 +8,7 @@ var gulpIf = require('gulp-if');
 var imageResize = require('gulp-image-resize');
 var imagemin = require('gulp-imagemin');
 var cache = require('gulp-cache');
+var sitemap = require('gulp-sitemap');
 
 //Compile css
 	gulp.task('scss', function(){
@@ -61,6 +62,17 @@ var cache = require('gulp-cache');
 		return gulp.src('app/fonts/**/*')
 		.pipe(gulp.dest('dist/fonts'))
 	})
+
+// Sitemap 
+	gulp.task('sitemap', function () {
+	    gulp.src('dist/**/*.html', {
+	            read: false
+	        })
+	        .pipe(sitemap({
+	            siteUrl: 'http://jwastudio.com'
+	        }))
+	        .pipe(gulp.dest('./dist'));
+	});
 
 // Gulp Tasks
 //-------------------
