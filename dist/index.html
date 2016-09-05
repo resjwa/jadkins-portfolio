@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>J. Adkins - Work Portfolio</title>
+		<title>J. Adkins - Portfolio</title>
 		<meta name="description" content="Portfolio for Composer/Developer Joe Adkins.">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!-- og tags -->
@@ -25,6 +25,9 @@
 			<link rel="icon" type="image/png" href="images/favicons/avicon-16x16.png" sizes="16x16" />
 			<link rel="icon" type="image/png" href="images/favicons/favicon-128.png" sizes="128x128" />
 		<link rel="stylesheet" href="css/styles.min.css">
+		<!-- scripts -->
+		<script   src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.min.js"></script>
+		<script src="js/main.min.js"></script>
 		<link href='https://fonts.googleapis.com/css?family=Lato:300,400|Open+Sans' rel='stylesheet' type='text/css'>
 	</head>
 	<body>
@@ -34,7 +37,7 @@
 		<header>
 			<div>
 				<h1 class="title">Joe Adkins</h1>
-				<h2>Work Portfolio</h2>
+				<h2>Portfolio</h2>
 			</div>
 			<button id="nav-toggle" class="navigation icon-menu" aria-label="Navigation Button" aria-selected="false">
 				<span class="screenreader-text">Navigation</span><a href="/contact"></a>
@@ -70,14 +73,35 @@
 						<p class="photo-credit">Pictured: Adam Carter, J. Adkins, Jessica Carey (photo), Butch Taylor.</p>
 					</div>
 					<ul class="media-icons">
-						<li><a class="icon-facebook2" href="https://www.facebook.com/jwilliam.adkins" target="_blank"><span class="screenreader-text">Faceboot</span></a></li>
 						<li><a class="icon-soundcloud2" href="https://soundcloud.com/jwa-3" target="_blank"><span class="screenreader-text">SoundCloud</span></a></li>
 						<li><a class="icon-linkedin" href="https://www.linkedin.com/in/j-w-adkins-437aa360" target="_blank"><span class="screenreader-text">LinkedIn</span></a></li>
 						<li><a class="icon-github" href="https://github.com/resjwa/jadkins-portfolio" target="_blank"><span class="screenreader-text">GitHub<</span></a></li>
+						<li><a class="icon-facebook2" href="https://www.facebook.com/jwilliam.adkins" target="_blank"><span class="screenreader-text">Faceboot</span></a></li>
 					</ul>
 					<p>My work involves the often-overlapping domains of technology and the arts. I create music for film/multi-media and for traditional and new venues. As a founding member of the creative production group The Misery Brothers, I help write and produce original content for a variety of purposes. I recently collaborated with film director and Misery Sister <a href="http://keystoneartspace.com/melanie-mandl/" target="_blank">Melanie Mandl</a> on a film project for <a href="https://theautry.org/" target="_blank">The Autry Museum of the American West</a> (Los Angeles) that premieres October, 2016.</p>
 					<p>My work in web and software development began in Y2K when I helped create an award-winning official website for the Los Angeles Dodgers. Since then, I have developed projects for organizations including Oxford University Press, The American Medical Association, American Association of Pediatrics, Actress Halle Berry, The STAPLES Center, and the US Government.</p>
 					<p>- J. Adkins, Ph.D.</p>
+				</section>
+
+			<!-- Autry Museum -->
+				<section>
+					<h3 class="project-title">Autry Museum of the American West</h3>
+					<div class="image-holder">
+						<picture>
+							<source 
+							media="(min-width: 641px)"
+							srcset="images/autry.jpg">
+							<source 
+							media="(max-width: 640px)"
+							srcset="images/sm/autry.jpg">
+							<img src="images/autry.jpg" alt="Still from Autry Museum of the American West Film" />
+						</picture>
+						<p class="photo-credit">Still from film by Melanie Mandl</p>
+					</div>
+					<ul class="media-icons">
+						<li><a class="icon-facebook2" href="https://www.facebook.com/AutryMuseum/" target="_blank"><span class="screenreader-text"></span></a></li>
+					</ul>
+					<p><em>Mabel</em> is a biographical stop-motion short about <a href="https://en.wikipedia.org/wiki/Mabel_McKay" target="_blank">Mabel McKay</a>, a <a href="https://en.wikipedia.org/wiki/Pomo_people" target="_blank">Pomo Indian</a> Medicine Woman and Basket Weaver. The film was created by Los Angeles Filmmaker <a href="http://keystoneartspace.com/melanie-mandl/" target="_blank">Melanie Mandl</a> for <a href="https://theautry.org/" target="_blank">The Autry Museum of the American West</a>. The musical score was composed and produced by J. Adkins, performed by J. Adkins and Adam Carter, recorded by Butch Taylor at <a href="http://www.ravensworthstudios.com/" target="_blank">Ravensworth Studios</a>.</p>
 				</section>
 
 			<!-- TOMATOFACE -->
@@ -103,27 +127,6 @@
 					<p>The spot was written by The Misery Brothers (with Rob Wooten, of Texas Beach), co-produced with <a href="http://thebranching.com/" target="_blank">Lucas Krost, of The Branching</a>, , directed by <a href="http://keystoneartspace.com/melanie-mandl/" target="_blank">Melanie Mandl</a>, filmed on location at <a href="https://www.facebook.com/GWARbar" target="_blank">GWARbar</a>, with cinemetography by Mark Mervis. The props were made by <a href="https://www.facebook.com/corottedartistry1" target="_blank">Corotted Artistry</a>, with music by GWAR and J. Adkins. Starring: Abbey Reddington, Michael Bishop, Shannon Roulet, and Jessica Carey.</p>
 				</section>
 
-			<!-- Autry Museum -->
-				<section>
-					<h3 class="project-title">Autry Museum of the American West</h3>
-					<div class="image-holder">
-						<picture>
-							<source 
-							media="(min-width: 641px)"
-							srcset="images/autry.jpg">
-							<source 
-							media="(max-width: 640px)"
-							srcset="images/sm/autry.jpg">
-							<img src="images/autry.jpg" alt="Still from Autry Museum of the American West Film" />
-						</picture>
-						<p class="photo-credit">Still from film by Melanie Mandl</p>
-					</div>
-					<ul class="media-icons">
-						<li><a class="icon-facebook2" href="https://www.facebook.com/AutryMuseum/" target="_blank"><span class="screenreader-text"></span></a></li>
-					</ul>
-					<p><em>Mabel</em> is a biographical stop-motion short about <a href="https://en.wikipedia.org/wiki/Mabel_McKay" target="_blank">Mabel McKay</a>, a <a href="https://en.wikipedia.org/wiki/Pomo_people" target="_blank">Pomo Indian</a> Medicine Woman and Basket Weaver. The film was created by Los Angeles Filmmaker <a href="http://keystoneartspace.com/melanie-mandl/" target="_blank">Melanie Mandl</a> for <a href="https://theautry.org/" target="_blank">The Autry Museum of the American West</a>. The musical score was composed and produced by J. Adkins, performed by J. Adkins and Adam Carter, recorded by Butch Taylor at <a href="http://www.ravensworthstudios.com/" target="_blank">Ravensworth Studios</a>.</p>
-				</section>
-
 			<!-- VA Film Fest -->
 				<section>
 					<h3 class="project-title">Virginia Film Festival</h3>
@@ -143,7 +146,7 @@
 						<li><a class="icon-vimeo2" href="https://vimeo.com/141223632" target="_blank"><span class="screenreader-text">Vimeo</span></a></li>
 						<li><a class="icon-facebook2" href="https://www.facebook.com/virginiafilmfestival/" target="_blank"><span class="screenreader-text">Facebook</span></a></li>
 					</ul>
-					<p>I worked with Motion Graphics Artist <a href="http://jonahtobias.com" target="_blank">Jonah Tobias</a> (<a href="http://www.imdb.com/title/tt0390521/" target="_blank">Supersize Me</a>, <a href="http://www.imdb.com/title/tt0963208/?ref_=nm_knf_i3" target="_blank">Where in the World is Osama Bin Laden</a>) to create these shrot intro animations which precede all the films shown at the annual <a href="http://virginiafilmfestival.org/" target="_blank">Virginia Film Festival</a>.
+					<p>I worked with Motion Graphics Artist <a href="http://jonahtobias.com" target="_blank">Jonah Tobias</a> (<a href="http://www.imdb.com/title/tt0390521/" target="_blank">Supersize Me</a>, <a href="http://www.imdb.com/title/tt0963208/?ref_=nm_knf_i3" target="_blank">Where in the World is Osama Bin Laden</a>) to create these short intro animations which precede all the films shown at the annual <a href="http://virginiafilmfestival.org/" target="_blank">Virginia Film Festival</a>.
 				</section>
 
 			<!-- Farm Sanctuary-->
@@ -228,8 +231,5 @@
 					<p><a href="http://miserybrothers.com" target="_blank">The Misery Brothers</a> are a small but powerful collection of creatives working in film, music, and creative project development for traditional and new media. The founding members are filmmaker Melanie Mandl, former VCU Assoc. Dean of Development John Bryan (Writer/Artist), Justin Laughter (Musician, Attorney), GWAR singer/bassist Michael Bishop, and Composer Joe Adkins</p>
 				</section>
 		</main>
-		<!-- scripts -->
-		<script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
-		<script src="js/main.min.js"></script>
 	</body>
 </html>
