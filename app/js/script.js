@@ -7,7 +7,6 @@ $(window).load(function(){
     $('#loader').fadeOut(618);
 });
 
-
 // Show/hide for single triggle/target pairs and add appropriate ARIA markup
 	var toggleElement = function (trigger, target) {
 			var $trigger = $(trigger);
