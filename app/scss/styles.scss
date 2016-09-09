@@ -245,6 +245,7 @@
 			}
 			.media-icons {
 				@include flexbox();
+				margin: 0 auto;
 				li {
 					@include flex(1 25%)
 				}
