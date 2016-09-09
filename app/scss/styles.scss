@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400|Open+Sans');
 @import "mixins";
 @import "variables";
 @import "icon-font";
@@ -191,16 +192,11 @@
 		top: 0;
 		z-index: 1000;
 		justify-content: space-between;
-		
-		.navigation {
-			cursor: pointer;
+		a {
+			text-decoration: none;
 			font-size: 50px;
-			color: white;
 			@media all and (max-width: $small) {
 				font-size: 35px;
-			}
-			a {
-				text-decoration: none;
 			}
 		}
 	}

@@ -22,13 +22,10 @@
 			<link rel="icon" type="image/png" href="images/favicons/favicon-196x196.png" sizes="196x196" />
 			<link rel="icon" type="image/png" href="images/favicons/favicon-96x96.png" sizes="96x96" />
 			<link rel="icon" type="image/png" href="images/favicons/favicon-32x32.png" sizes="32x32" />
-			<link rel="icon" type="image/png" href="images/favicons/avicon-16x16.png" sizes="16x16" />
+			<link rel="icon" type="image/png" href="images/favicons/favicon-16x16.png" sizes="16x16" />
 			<link rel="icon" type="image/png" href="images/favicons/favicon-128.png" sizes="128x128" />
 		<link rel="stylesheet" href="css/styles.min.css">
 		<!-- scripts -->
-		<script   src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.min.js"></script>
-		<script src="js/main.min.js"></script>
-		<link href='https://fonts.googleapis.com/css?family=Lato:300,400|Open+Sans' rel='stylesheet' type='text/css'>
 	</head>
 	<body>
 		<div id="loader" aria-hidden="true">
@@ -39,11 +36,10 @@
 				<h1 class="title">Joe Adkins</h1>
 				<h2>Portfolio</h2>
 			</div>
-			<button id="nav-toggle" class="navigation icon-menu" aria-label="Navigation Button" aria-selected="false">
-				<span class="screenreader-text">Navigation</span><a href="/contact"></a>
-			</button>
+			<a id="nav-toggle" class="navigation icon-menu" aria-label="Navigation Button" aria-controls="main-nav" aria-selected="false" href="#">
+			</a>
 		</header>
-		<nav id="main-nav" aria-labeledby="nav-toggle" aria-hidden="true">
+		<nav id="main-nav" aria-hidden="true">
 			<ul class="contact">
 				<li class="contact-mail">jwa@jwastudio.com</li>
 				<li class="contact-text">304.542.6362</li>
@@ -231,5 +227,7 @@
 					<p><a href="http://miserybrothers.com" target="_blank">The Misery Brothers</a> are a small but powerful collection of creatives working in film, music, and creative project development for traditional and new media. The founding members are filmmaker Melanie Mandl, former VCU Assoc. Dean of Development John Bryan (Writer/Artist), Justin Laughter (Musician, Attorney), GWAR singer/bassist Michael Bishop, and Composer Joe Adkins</p>
 				</section>
 		</main>
+			<script   src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.min.js"></script>
+		<script src="js/main.min.js"></script>
 	</body>
 </html>

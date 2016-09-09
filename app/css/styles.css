@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400|Open+Sans");
 @font-face {
   font-family: 'icomoon';
   src: url("../fonts/icomoon.eot?2joorm");
@@ -247,15 +248,12 @@ header {
   top: 0;
   z-index: 1000;
   justify-content: space-between; }
-  header .navigation {
-    cursor: pointer;
-    font-size: 50px;
-    color: white; }
+  header a {
+    text-decoration: none;
+    font-size: 50px; }
     @media all and (max-width: 640px) {
-      header .navigation {
+      header a {
         font-size: 35px; } }
-    header .navigation a {
-      text-decoration: none; }
 
 footer {
   position: absolute;
