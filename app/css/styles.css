@@ -186,7 +186,10 @@ blockquote {
   border-left: 10px solid rgba(108, 98, 0, 0.6);
   display: block;
   margin-bottom: 20px;
-  padding: 0 10px 10px; }
+  padding: 10px; }
+  @media all and (max-width: 640px) {
+    blockquote {
+      background: rgba(108, 98, 0, 0.2); } }
   blockquote h3 {
     margin-top: 0; }
   blockquote p, blockquote cite {
