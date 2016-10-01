@@ -13,6 +13,7 @@
 		@include borderbox();
 		@include legible();
 		color: $text;
+		font-size: 100%;
 		font-family: $open-sans;
 		padding: $top-padding 20px 0px;
 
@@ -120,13 +121,39 @@
 		max-width: 100%;
 	}
 
+	blockquote {
+		max-width: 620px;
+		margin: 0 auto;
+		border-left: 10px solid $green-border;
+		display: block;
+		margin-bottom: 20px;
+		padding: 0 10px 10px;
+		h3 {
+			margin-top: 0;
+		}
+		p, cite {
+			font-size: .9rem;
+			line-height: 1.5;
+		}
+		p {
+			padding: 0 10px;
+			margin: 10px 0;
+			&:first-of-type {
+				margin-top: 0;
+			}
+		}
+		cite {
+			padding-left: 10px;
+		}
+	}
+
 	// Headers
 		header {
 			h1, h2 {
 				margin: 0;
 			}
 		}
-		h1, h2, h3 {
+		h1, h2, h3, .tagline {
 			font-family: $lato;
 			font-weight: 300;
 			text-transform: uppercase;
@@ -135,21 +162,25 @@
 			@include font-size(4);
 		}
 		h2 {
-			@include font-size(2);
-		}
-		h3 {
 			@include font-size(3);
 		}
-
+		h3 {
+			@include font-size(2);
+		}
+		.tagline {
+			@include font-size(2);
+			margin: 0;
+			padding: 0;
+		}
 		@media all and (max-width: $small) {
 			h1 {
 				@include font-size(3.618);
 			}
 			h2 {
-				@include font-size(1.618);
+				@include font-size(2.618);
 			}
 			h3 {
-				@include font-size(2.618);
+				@include font-size(1.618);
 			}
 		}
 
@@ -176,7 +207,7 @@
 //---------------------
 	.chrome {
 		left: 0;
-		padding: 20px 10px;
+		padding: 20px 10px 10px;
 		width: 100%;
 		background: $chrome-bg;
 		border-bottom: $borders;

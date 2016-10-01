@@ -83,6 +83,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #cfcec9;
+  font-size: 100%;
   font-family: "Open Sans", sans-serif;
   padding: 132px 20px 0px; }
   @media all and (max-width: 1024px) {
@@ -179,10 +180,30 @@ a {
 img {
   max-width: 100%; }
 
+blockquote {
+  max-width: 620px;
+  margin: 0 auto;
+  border-left: 10px solid rgba(108, 98, 0, 0.6);
+  display: block;
+  margin-bottom: 20px;
+  padding: 0 10px 10px; }
+  blockquote h3 {
+    margin-top: 0; }
+  blockquote p, blockquote cite {
+    font-size: .9rem;
+    line-height: 1.5; }
+  blockquote p {
+    padding: 0 10px;
+    margin: 10px 0; }
+    blockquote p:first-of-type {
+      margin-top: 0; }
+  blockquote cite {
+    padding-left: 10px; }
+
 header h1, header h2 {
   margin: 0; }
 
-h1, h2, h3 {
+h1, h2, h3, .tagline {
   font-family: "Lato", sans-serif;
   font-weight: 300;
   text-transform: uppercase; }
@@ -191,18 +212,23 @@ h1 {
   font-size: 2.472em; }
 
 h2 {
-  font-size: 1.236em; }
+  font-size: 1.854em; }
 
 h3 {
-  font-size: 1.854em; }
+  font-size: 1.236em; }
+
+.tagline {
+  font-size: 1.236em;
+  margin: 0;
+  padding: 0; }
 
 @media all and (max-width: 640px) {
   h1 {
     font-size: 2.23592em; }
   h2 {
-    font-size: 0.99992em; }
+    font-size: 1.61792em; }
   h3 {
-    font-size: 1.61792em; } }
+    font-size: 0.99992em; } }
 
 .media-icons {
   max-width: 720px;
@@ -226,7 +252,7 @@ h3 {
 
 .chrome, header, footer {
   left: 0;
-  padding: 20px 10px;
+  padding: 20px 10px 10px;
   width: 100%;
   background: rgba(0, 0, 0, 0.75);
   border-bottom: 1px solid rgba(255, 255, 255, 0.22);
