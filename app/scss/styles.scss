@@ -8,6 +8,7 @@
 //=====================
 	body {
 		background-color: #6c6200;
+		background: black;
 	  	background: url('../images/bg.jpg') no-repeat center fixed;
 		@include cover();
 		@include borderbox();
@@ -66,8 +67,9 @@
 			max-width: 49%;
 			margin: .5%;
 			margin-bottom: 20px;
-			background: #222;
+			background-color: #222;
 			background: $section-bg;
+			border: 1px solid black;
 			border: $borders;
 			position: relative;
 			@include borderbox();
@@ -212,6 +214,7 @@
 		left: 0;
 		padding: 20px 10px 10px;
 		width: 100%;
+		background-color: black;
 		background: $chrome-bg;
 		border-bottom: $borders;
 		@include flexbox();

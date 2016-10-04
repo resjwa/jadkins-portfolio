@@ -71,6 +71,7 @@
 
 body {
   background-color: #6c6200;
+  background: black;
   background: url("../images/bg.jpg") no-repeat center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -128,8 +129,9 @@ section {
   max-width: 49%;
   margin: .5%;
   margin-bottom: 20px;
-  background: #222;
+  background-color: #222;
   background: rgba(0, 0, 0, 0.75);
+  border: 1px solid black;
   border: 1px solid rgba(255, 255, 255, 0.22);
   position: relative;
   -webkit-box-sizing: border-box;
@@ -257,6 +259,7 @@ h3 {
   left: 0;
   padding: 20px 10px 10px;
   width: 100%;
+  background-color: black;
   background: rgba(0, 0, 0, 0.75);
   border-bottom: 1px solid rgba(255, 255, 255, 0.22);
   display: -webkit-box;
