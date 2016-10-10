@@ -97,13 +97,13 @@ body {
       background: #6c6200; } }
   @media only screen and (min-device-width: 320px) and (max-device-width: 736px) and (orientation: landscape) {
     body {
-      padding-top: 62px; }
+      padding-top: 77px; }
       body header {
         padding: 5px; }
         body header h1 {
           font-size: 2em; }
       body #main-nav {
-        top: 69px; }
+        top: 83px; }
         body #main-nav .contact {
           padding: 10px;
           margin: 5px auto; } }
@@ -305,7 +305,7 @@ footer {
   position: fixed;
   width: 100%;
   height: 100%;
-  top: 112px;
+  top: 109px;
   left: 0;
   background: #4e4700;
   background: rgba(78, 71, 0, 0.9); }
@@ -346,7 +346,7 @@ footer {
         flex: 1 25%; }
   @media all and (max-width: 640px) {
     #main-nav {
-      top: 103px; } }
+      top: 107px; } }
 
 .image-holder img {
   border-top: 1px solid rgba(255, 255, 255, 0.22);
