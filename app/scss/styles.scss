@@ -7,10 +7,7 @@
 //Body and Layout -----
 //=====================
 	body {
-		background-color: #6c6200;
-		background: black;
-	  	background: url('../images/bg.jpg') no-repeat center fixed;
-		@include cover();
+		background: #3C3C3C;
 		@include borderbox();
 		@include legible();
 		color: $text;
@@ -25,13 +22,12 @@
 		@media all and (max-width: $small) {
 			padding-top: $top-padding - 20px;
 			margin: 3px 0;
-			background: $background-color;
 		}
 		// Landscape device styles
-		@media only screen 
-		and (min-device-width: 320px) 
-		and (max-device-width: 736px) 
-		and (orientation: landscape) { 
+		@media only screen
+		and (min-device-width: 320px)
+		and (max-device-width: 736px)
+		and (orientation: landscape) {
 			padding-top: $top-padding - 55px;
 			header {
 				padding: 5px;
@@ -58,10 +54,10 @@
 			@media all and (max-width: $large) {
 				display: block;
 			}
-		
+
 	}
 
-	// Sections: 2 items per row for large screens ---- 
+	// Sections: 2 items per row for large screens ----
 		section {
 			@include flex(1 49%);
 			max-width: 49%;
@@ -263,8 +259,7 @@
 		height: 100%;
 		top: $top-padding - 23px;
 		left: 0;
-		background: #4e4700;
-		background: $cell-color;
+		background: rgba(23, 23, 23, 0.9);
 		.contact {
 			background: rgba(0,0,0,0.25);
 			text-align: center;
@@ -312,5 +307,3 @@
 			max-width: 100%;
 		}
 	}
-
-

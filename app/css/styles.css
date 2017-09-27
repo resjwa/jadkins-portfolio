@@ -48,7 +48,7 @@
   content: "\eac9"; }
 
 #loader {
-  background: #6c6200;
+  background: #3C3C3C;
   width: 100%;
   height: 100%;
   position: fixed;
@@ -70,13 +70,7 @@
   top: calc(50% - 30px); }
 
 body {
-  background-color: #6c6200;
-  background: black;
-  background: url("../images/bg.jpg") no-repeat center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  background: #3C3C3C;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -93,8 +87,7 @@ body {
   @media all and (max-width: 640px) {
     body {
       padding-top: 112px;
-      margin: 3px 0;
-      background: #6c6200; } }
+      margin: 3px 0; } }
   @media only screen and (min-device-width: 320px) and (max-device-width: 736px) and (orientation: landscape) {
     body {
       padding-top: 77px; }
@@ -307,8 +300,7 @@ footer {
   height: 100%;
   top: 109px;
   left: 0;
-  background: #4e4700;
-  background: rgba(78, 71, 0, 0.9); }
+  background: rgba(23, 23, 23, 0.9); }
   #main-nav.is-active {
     display: inline; }
   #main-nav .contact {
